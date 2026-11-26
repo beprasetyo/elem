@@ -1,0 +1,74 @@
+{
+  "project_name": "KimLee_FEM_BBM_Jayapura_Wamena",
+  "description": "Central run configuration. Unzip project INSIDE C:\\PLAXIS_ELEM\\Phase_12_Fredlund and execute python run.py. No stage CLI flags required.",
+  "paths": {
+    "input_dir": "..",
+    "snapshot_csv": "Phase_12_Step_2287.csv",
+    "connectivity": "connectivity.txt",
+    "prescribed_curve": "data/inputs/B1_example_surface_DIAGNOSTIC.csv",
+    "materials": "config/materials.json",
+    "search_domain": "config/search_domain.json",
+    "results_dir": "results"
+  },
+  "analysis": {
+    "strength_formulation": "bishop_pt",
+    "stages": [
+      "a2",
+      "b1",
+      "b2",
+      "c1",
+      "c2",
+      "c3",
+      "pt_audit"
+    ],
+    "make_plots": true
+  },
+  "circular_search": {
+    "sagitta_ratio_min": 0.025,
+    "sagitta_ratio_max": 0.35,
+    "sagitta_steps": 15,
+    "screen_step_m": 0.8,
+    "refinement_step_m": 0.32,
+    "refine_top_n": 100,
+    "min_sliding_area_m2": 20.0,
+    "min_depth_m": 0.5,
+    "max_negative_force_fraction": 0.15,
+    "geometry_tolerance_m": 2e-06,
+    "use_numba_geometry": false,
+    "refine_diverse_fraction": 0.25,
+    "refine_diverse_pool": 4000,
+    "refine_entry_separation_m": 1.0,
+    "refine_exit_separation_m": 1.5,
+    "refine_ratio_separation": 0.015,
+    "bfgs": {
+      "enabled": true,
+      "starts": 3,
+      "maxiter": 35,
+      "finite_difference_steps_m": [
+        0.025,
+        0.025,
+        0.015
+      ],
+      "seed_entry_separation_m": 1.0,
+      "seed_exit_separation_m": 1.5,
+      "seed_sagitta_ratio_separation": 0.015
+    }
+  },
+  "noncircular_search": {
+    "vertex_levels": [
+      4,
+      7,
+      13
+    ],
+    "screen_step_m": 0.8,
+    "x_trust_m": 2.0,
+    "y_trust_m": 2.0,
+    "min_vertex_dx_m": 0.25,
+    "max_turning_angle_deg": 50.0,
+    "slsqp_maxiter": 14,
+    "fd_step_m": 0.025,
+    "ftol": 1e-05,
+    "pattern_passes": 3,
+    "pattern_step_m": 0.5
+  }
+}

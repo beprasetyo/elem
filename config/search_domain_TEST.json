@@ -1,0 +1,25 @@
+{
+  "description": "Provisional entry/exit bounds from user's latest circular-search settings; NOT validated failure boundaries",
+  "entry_x_range_m": [
+    23.0,
+    46.0
+  ],
+  "exit_x_range_m": [
+    60.0,
+    97.0
+  ],
+  "allowed_material_indices": [
+    0,
+    5
+  ],
+  "maximum_vertical_depth_below_ground_m": 22.0,
+  "surface_probe_depth_m": 0.05,
+  "plot_x_range_m": [
+    8.0,
+    123.0
+  ],
+  "high_strain_percentile": 99.5,
+  "provisional": true,
+  "entry_samples": 9,
+  "exit_samples": 13
+}

@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+results/*
+!results/.gitkeep
+/data/inputs/*.csv
+!/data/inputs/B1_example_surface_DIAGNOSTIC.csv
